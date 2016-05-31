@@ -1,0 +1,24 @@
+.sbj-frame {
+  height:300px;
+  overflow-y:scroll;
+  padding:0px;
+}
+
+.sbj-row {
+  margin:0px;
+  border:0px;
+}
+
+.sbj-context {
+  width:100px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.sbj-cell {
+  display:table-cell;
+  margin:0px;
+  width:100px;
+  height:50px;
+}
