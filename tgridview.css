@@ -1,24 +1,27 @@
-.sbj-frame {
-  height:300px;
-  overflow-y:scroll;
-  padding:0px;
+.subj-list {
+    width: 50%;
 }
 
-.sbj-row {
-  margin:0px;
-  border:0px;
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
 }
 
-.sbj-context {
-  width:100px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+thead th {
+    height: 30px;
+    /*text-align: left;*/
 }
 
-.sbj-cell {
-  display:table-cell;
-  margin:0px;
-  width:100px;
-  height:50px;
+tbody {
+    height: 200px;
+    overflow-y: auto;
+}
+
+tbody td, thead th {
+    width: 20%;
+    float: left;
 }
