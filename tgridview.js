@@ -1,5 +1,6 @@
 var TGridView = function(id, attrs)
 {
+  this.selected = null;
   this.init(id, attrs);
 }
 
@@ -17,16 +18,25 @@ TGridView.prototype = {
 
     $("#"+id).append(html);
     html = "";
-    var start = performance.now();
-    for(var i=0; i<800; i++) {
-      html += "<tr id=row"+i+">";
+
+    for(var i=0; i<20; i++) {
+      html += "<tr class=\"row-body\">";
       for(var j=0; j<attrCount; j++) {
         html += "<td>Cell</td>";
       }
       html += "</tr>";
     }
     $("#"+id+" tbody").append(html);
-    console.log(performance.now()-start);
+
+    $("#"+id+" .row-body").on("click", {ctx:this}, this.onRowSelected);
+  },
+
+  onRowSelected : function(e)
+  {
+    var ctx = e.data.ctx;
+    if(ctx.selected != null) ctx.selected.removeClass("row-selected");
+    $(e.currentTarget).addClass("row-selected");
+    ctx.selected = $(e.currentTarget);
   }
 }
 

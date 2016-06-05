@@ -1,9 +1,10 @@
 .table-frame {
-    width: 400px;
+  width: 400px;
 }
 
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+.table-hover tbody tr:hover {
   background-color: #bbeeff;
+
 }
 
 .noselect {
@@ -15,26 +16,30 @@
   cursor: default;
 }
 
+.row-selected{
+  background-color: #99aaff !important;
+}
+
 thead, tbody, tr, td, th { display: block; }
 
 tr:after {
-    content: "";
-    display: block;
-    visibility: hidden;
-    clear: both;
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
 }
 
 thead th {
-    height: 30px;
-    text-align: left;
+  height: 30px;
+  text-align: left;
 }
 
 tbody {
-    height: 400px;
-    overflow-y: auto;
+  height: 400px;
+  overflow-y: auto;
 }
 
 tbody td, thead th {
-    width: 25%;
-    float: left;
+  width: 33%;
+  float: left;
 }
