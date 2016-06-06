@@ -11,16 +11,19 @@ var TGridView = function(id, attrs)
 TGridView.prototype = {
   init : function()
   {
+    //$("thead th").width
+
     var html = "";
+    var width;
 
     //draw table header
     html += "<table class=\"table table-hover table-frame noselect\"><thead><tr>";
     for(var i=0; i<this.attrCount; i++) {
-      html += "<th>" + this.attrs[i] + "</th>";
+      width = 100/this.attrCount+"%"
+      html += "<th width="+width+">" + this.attrs[i] + "</th>";
     }
     html += "</tr></thead><tbody></tbody></table>";
     $("#"+this.id).append(html);
-
 
     $("#"+this.id).on("click", ".row-body", {ctx:this}, this.onRowSelected);
   },
@@ -36,9 +39,14 @@ TGridView.prototype = {
   addRow : function(data)
   {
     if(data.length != this.attrCount) throw new Error("Mismatch of attributes.");
+
     var html = "<tr class=\"row-body\">";
+    var width;
+
     for(var i=0; i<this.attrCount; i++) {
-      html += "<td>"+data[i]+"</td>";
+      width = 100/this.attrCount+"%";
+      width = "200px";
+      html += "<td width="+width+">"+data[i]+"</td>";
     }
     html += "</tr>";
     $("#"+this.id+" tbody").append(html);
